@@ -1,0 +1,38 @@
+# See https://developers.miro.com/docs/app-manifest for details
+# Give your app a name that will be displayed to users in Miro
+appName: Miro Claude Agent
+
+# Specify the SDK version you want to use.
+# See https://developers.miro.com/docs/web-sdk-release-notes for details.
+sdkVersion: SDK_V2
+
+# Specify the URL for the app's entry point.
+# This is where Miro will load the app's UI from.
+# For development, this is typically localhost.
+sdkUri: http://localhost:3000
+
+# Define the UI extensions for the app.
+# We want a panel in the left sidebar.
+appUi:
+  # See https://developers.miro.com/docs/ui-add-a-panel for details
+  panel:
+    # The URL for the panel's UI, same as sdkUri for simple apps
+    url: http://localhost:3000
+    # Optionally, define an icon for the panel
+    # icon: <url_to_your_icon>
+
+# Define the permissions (scopes) your app needs.
+# 'boards:read' to read board content.
+# 'boards:write' might be useful later.
+scopes:
+  - boards:read
+  - boards:write
+
+# Optional: Specify redirect URIs if your app uses OAuth 2.0
+# create-miro-app often adds a default one for Next.js API routes
+redirectUris:
+  - http://localhost:3000/api/redirect
+
+boardPicker:
+  allowedDomains:
+    - localhost 
